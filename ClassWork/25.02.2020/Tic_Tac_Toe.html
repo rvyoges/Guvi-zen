@@ -34,7 +34,7 @@
             document.body.appendChild(heading);
             var count=0;
             var result_x=[];
-            
+            var result_o=[];
             for (var x=0;x<9;x++)
             {
             var block=document.createElement('div');
@@ -49,8 +49,19 @@
                     if(count<9){
                     document.getElementById(element).innerHTML =result();
                     count=count+1;}
-                    else{var x=document.getElementsByTagName("div");
-                        console.log(x);
+                    else{
+                        for (var x=1;x<10;x++)
+                        {
+                            if(document.getElementById(x).textContent=="X")
+                            {
+                                result_x.push(x);
+                            }
+                            else
+                            {
+                                result_o.push(x);
+                            }
+                        }
+
                 }});}
             
             function result()
