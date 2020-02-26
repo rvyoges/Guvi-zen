@@ -1,0 +1,60 @@
+//Generating Six digit Random number
+// With all digits are unique
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Generate Random Number
+        </title>
+        <style>
+            div
+            {
+                color:blue;
+                text-align: center;
+                font-size: 100px;
+            }
+            h1
+            {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+    <script>
+        min=100000;
+        max=999999;
+        var finalNum='';
+        var heading=document.createElement("h1");
+        heading.innerHTML="Creating Random Number";
+        document.body.appendChild(heading);
+        var div1=document.createElement("div");
+        generateRandom(min,max)
+        function generateRandom(min,max)
+        {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            var num= Math.floor(Math.random() * (max - min + 1)) + min;
+            supnum = num.toString();
+            supnum=supnum.split("");
+            for (var i=0;i<supnum.length;i++)
+            {
+                for (var j=i+1;j<supnum.length;j++)
+                {
+                    if(supnum[i]==supnum[j])
+                    {
+                        generateRandom(min,max)
+                    }
+                }
+            }
+        }
+        for(var x=0;x<supnum.length;x++)
+        {
+            finalNum=finalNum+supnum[x];
+        }
+
+        div1.innerHTML=finalNum;
+        document.body.appendChild(div1);
+    </script>
+    </body>
+</html>
