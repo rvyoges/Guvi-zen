@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Shopping cart
+        </title>
+    </head>
+    <body>
+        <div>
+            <h1 id="cusName"></h1>
+            <form id="formdata" onsubmit="myFunc();return false">
+            <label for="product-name">Product Name: </label>
+            <input type="text" id="proName" autofocus="autofocus" required></input>
+            <label for="base-price">Product Base Price: </label>
+            <input type="text" id="baPrice" required></input>
+            <input type="submit"></input> </form>
+        </div>
+        <div id="variantDiv"></div>
+        <div id="tableDiv"></div>
+        <div>
+            <button id="fsubmit" onclick="fsubmit()" >final submit</button>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
